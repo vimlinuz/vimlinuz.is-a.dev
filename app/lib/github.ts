@@ -20,6 +20,9 @@ export async function fetchGitHubRepos(
   username: string,
 ): Promise<GitHubRepo[]> {
   const reposToinclude = [
+    "nmtui",
+    "alertify",
+    "xeditor",
     "initflake",
     "santoshxshrestha.github.io",
     "nixos",
