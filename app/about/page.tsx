@@ -21,7 +21,7 @@ export default function About() {
   const terminalRef = useRef<HTMLDivElement>(null);
 
   const infoData = [
-    { label: "Name:", value: "Santosh Shrestha" },
+    { label: "Name:", value: "vimlinuz" },
     { label: "Role:", value: "Wanderer" },
     { label: "Location:", value: "Butwal, Nepal" },
     {
@@ -39,13 +39,13 @@ export default function About() {
     { label: "", value: "" },
     {
       label: "GitHub:",
-      value: "https://github.com/santoshxshrestha",
+      value: "https://github.com/vimlinuz",
       highlight: true,
-      url: "https://github.com/santoshxshrestha",
+      url: "https://github.com/vimlinuz",
     },
     { label: "Website:", value: "well", highlight: true },
     { label: "Email:", value: "username [at] gmail.com", highlight: true },
-    { label: "Discord:", value: "santoshxshrestha", highlight: true },
+    { label: "Discord:", value: "vimlinuz", highlight: true },
     { label: "", value: "" },
     { label: "About:", value: "" },
     {
@@ -152,14 +152,14 @@ export default function About() {
 
     if (command === "contact") {
       return `Contact Information:
-  • GitHub: https://github.com/santoshxshrestha
-  • Discord: santoshxshrestha
+  • GitHub: https://github.com/vimlinuz
+  • Discord: vimlinuz
   • Email: username [at] gmail.com
-  • Location: Butwal, Nepal`;
+  • Location: Nepal`;
     }
 
     if (command === "whoami") {
-      return "santosh";
+      return "vimlinuz";
     }
 
     if (command === "date") {
@@ -181,7 +181,7 @@ export default function About() {
 
     if (command === "neofetch") {
       return `
-       ___      santosh@nixos
+       ___      vimlinuz@nixos
       /   \\     OS: NixOS (Yarara) x86_64
      | o o |    Shell: nu
      |  >  |    Terminal: Interactive Web Terminal
@@ -257,7 +257,7 @@ export default function About() {
         {showInitialContent && (
           <>
             <div className="prompt-line">
-              <span className="user">[santosh</span>
+              <span className="user">[vimlinuz</span>
               <span className="at">@</span>
               <span className="host">nixos</span>
               <span className="path">~]</span>
@@ -323,7 +323,7 @@ export default function About() {
         {history.map((entry, index) => (
           <div key={index}>
             <div className="prompt-line">
-              <span className="user">[santosh</span>
+              <span className="user">[vimlinuz</span>
               <span className="at">@</span>
               <span className="host">nixos</span>
               <span className="path">~]</span>
@@ -340,7 +340,7 @@ export default function About() {
 
         {isInteractive && (
           <div className="prompt-line">
-            <span className="user">[santosh</span>
+            <span className="user">[vimlinuz</span>
             <span className="at">@</span>
             <span className="host">nixos</span>
             <span className="path">~]</span>

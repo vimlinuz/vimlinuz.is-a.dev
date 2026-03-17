@@ -84,7 +84,7 @@ export const contentPairs = [
     bio: "I try to stay grounded in systems I barely understand. But that's the point — to understand them.",
   },
   {
-    title: " sudo chown -R santosh ~/destiny",
+    title: " sudo chown -R vimlinuz ~/destiny",
     bio: "Taking ownership of every path I walk. No more running commands I don't understand.",
   },
   {
@@ -100,7 +100,7 @@ export const contentPairs = [
     bio: "The kernel speaks in errors and warnings. Like me, it struggles sometimes — but it keeps booting.",
   },
   {
-    title: 'Santosh | printf "Hello, purpose\\n"',
+    title: 'vimlinuz | printf "Hello, purpose\\n"',
     bio: "Not everything has to be dynamic. Some truths are best printed clearly and simply.",
   },
   {
@@ -264,7 +264,7 @@ export const contentPairs = [
     bio: "Force quitting insecurity one process at a time. It respawns sometimes — but weaker each time.",
   },
   {
-    title: " ssh santosh@localhost",
+    title: " ssh vimlinuz@localhost",
     bio: "I'm learning to connect with myself. No password needed — just honesty.",
   },
   {
@@ -280,7 +280,7 @@ export const contentPairs = [
     bio: "Compressed, but never forgotten. Sometimes I unpack them just to remember how far I've come.",
   },
   {
-    title: " alias santosh='always learning'",
+    title: " alias vimlinuz='always learning'",
     bio: "A shortcut to who I really am — defined once, echoed always",
   },
   {

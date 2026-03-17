@@ -5,11 +5,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://santoshxshrestha.tech"),
-  title: "Santosh - Home",
-  description:
-    "Santosh Shrestha's personal website. Explore more about Santosh.",
+  title: "vimlinuz - Home",
+  description: "vimlinuz's personal website. Explore more about Santosh.",
   keywords:
-    "Santosh Shrestha, santoshxshrestha, personal website, projects, blog, NixOS, developer, portfolio",
+    "vimlinuz, personal website, projects, blog, NixOS, developer, portfolio",
   openGraph: {
     images: "/santosh.jpg",
   },

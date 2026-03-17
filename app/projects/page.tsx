@@ -74,7 +74,7 @@ export default function Projects() {
 }
 
 export const metadata: Metadata = {
-  title: "Santosh - Projects",
+  title: "vimlinuz - Projects",
   description:
-    "A collection of Santosh Shrestha's open source projects and experiments",
+    "A collection of  vimlinuz's open source projects and experiments",
 };

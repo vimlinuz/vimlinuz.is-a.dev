@@ -102,13 +102,13 @@ export default function Home() {
 
     if (command === "contact") {
       return `Contact Information:
-  • GitHub: @santoshxshrestha
+  • GitHub: @vimlinuz
   • Location: ~/dev
   • Status: Always learning`;
     }
 
     if (command === "whoami") {
-      return "santosh";
+      return "vimlinuz";
     }
 
     if (command === "date") {
@@ -130,7 +130,7 @@ export default function Home() {
 
     if (command === "neofetch") {
       return `
-       ___      santosh@nixos
+       ___      vimlinuz@nixos
       /   \\     OS: NixOS (Yarara) x86_64
      | o o |    Shell: nu
      |  >  |    Terminal: Interactive Web Terminal
@@ -189,15 +189,10 @@ export default function Home() {
     <div className="container">
       <div className="header">
         <div className="profile-photo">
-          <Image
-            src="/santosh.jpg"
-            alt="Santosh Shrestha"
-            width={120}
-            height={120}
-          />
+          <Image src="/santosh.jpg" alt="vimlinuz" width={120} height={120} />
         </div>
         <h1 className="name">
-          Santosh Shrestha <br /> (@santoshxshrestha)
+          vimlinuz <br /> (@vimlinuz)
         </h1>
       </div>
 
@@ -206,7 +201,7 @@ export default function Home() {
           {showInitialContent && (
             <>
               <div className="prompt-line">
-                <span className="user">[santosh</span>
+                <span className="user">[vimlinuz</span>
                 <span className="at">@</span>
                 <span className="host">nixos</span>
                 <span className="path">~]</span>
@@ -229,7 +224,7 @@ export default function Home() {
           {history.map((entry, index) => (
             <div key={index}>
               <div className="prompt-line">
-                <span className="user">[santosh</span>
+                <span className="user">[vimlinuz</span>
                 <span className="at">@</span>
                 <span className="host">nixos</span>
                 <span className="path">~]</span>
@@ -246,7 +241,7 @@ export default function Home() {
 
           {isInteractive && (
             <div className="prompt-line">
-              <span className="user">[santosh</span>
+              <span className="user">[vimlinuz</span>
               <span className="at">@</span>
               <span className="host">nixos</span>
               <span className="path">~]</span>

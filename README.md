@@ -1,11 +1,8 @@
-# Santosh Shrestha - Portfolio Website Documentation
+# vimlinuz - Portfolio Website Documentation
 
 ## Overview
 
 A modern, terminal-inspired portfolio website featuring a glassmorphic design with animated elements. The site showcases a unique blend of retro terminal aesthetics and contemporary web design principles.
-
-**Live Site:** `https://santoshxshrestha.github.io`  
-**Repository:** `https://github.com/santoshxshrestha/santoshxshrestha.github.io`
 
 ## Features
 
