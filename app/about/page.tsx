@@ -23,7 +23,7 @@ export default function About() {
   const infoData = [
     { label: "Name:", value: "vimlinuz" },
     { label: "Role:", value: "Wanderer" },
-    { label: "Location:", value: "Butwal, Nepal" },
+    { label: "Location:", value: "Nepal" },
     {
       label: "Languages:",
       value: "Js/Ts, Rust, C/C++, Bash",
@@ -47,7 +47,6 @@ export default function About() {
     { label: "Email:", value: "username [at] gmail.com", highlight: true },
     { label: "Discord:", value: "vimlinuz", highlight: true },
     { label: "", value: "" },
-    { label: "About:", value: "" },
     {
       label: "",
       value:

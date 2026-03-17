@@ -191,9 +191,7 @@ export default function Home() {
         <div className="profile-photo">
           <Image src="/santosh.jpg" alt="vimlinuz" width={120} height={120} />
         </div>
-        <h1 className="name">
-          vimlinuz <br /> (@vimlinuz)
-        </h1>
+        <h1 className="name">VIMLINUZ</h1>
       </div>
 
       <div className="term-container" onClick={handleTerminalClick}>
