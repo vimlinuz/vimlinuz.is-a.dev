@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, KeyboardEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getRandomContentPair } from "./lib/randomContent";
+import NixWebring from "./components/NixWebring";
 
 interface HistoryEntry {
   command: string;
@@ -273,34 +274,7 @@ export default function Home() {
         <Link href="/about">About me</Link>
       </nav>
 
-      <ul className="pointless webring">
-        <li>
-          <a href="https://nixwebr.ing/prev/vimlinuz">&#x25D6;&nbsp;prev</a>
-        </li>
-        <li>
-          <a href="https://nixwebr.ing">Nix Webring</a>
-        </li>
-        <li>
-          <div id="nix-wrapper">
-            <Image
-              id="nix"
-              src="/nix.svg"
-              alt="Nix logo"
-              width={15}
-              height={15}
-              onClick={() =>
-                window.open("https://github.com/vimlinuz/nixos", "_blank")
-              }
-            />
-          </div>
-        </li>
-        <li>
-          <a href="https://nixwebr.ing/rand">Random</a>
-        </li>
-        <li>
-          <a href="https://nixwebr.ing/next/vimlinuz">next&nbsp;&#x25D7;</a>
-        </li>
-      </ul>
+      <NixWebring />
     </div>
   );
 }
