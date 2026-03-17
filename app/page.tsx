@@ -275,9 +275,7 @@ export default function Home() {
 
       <ul className="pointless webring">
         <li>
-          <a href="https://nixwebr.ing/prev/santoshxshrestha">
-            &#x25D6;&nbsp;prev
-          </a>
+          <a href="https://nixwebr.ing/prev/vimlinuz">&#x25D6;&nbsp;prev</a>
         </li>
         <li>
           <a href="https://nixwebr.ing">Nix Webring</a>
@@ -291,10 +289,7 @@ export default function Home() {
               width={15}
               height={15}
               onClick={() =>
-                window.open(
-                  "https://github.com/santoshxshrestha/nixos",
-                  "_blank",
-                )
+                window.open("https://github.com/vimlinuz/nixos", "_blank")
               }
             />
           </div>
@@ -303,9 +298,7 @@ export default function Home() {
           <a href="https://nixwebr.ing/rand">Random</a>
         </li>
         <li>
-          <a href="https://nixwebr.ing/next/santoshxshrestha">
-            next&nbsp;&#x25D7;
-          </a>
+          <a href="https://nixwebr.ing/next/vimlinuz">next&nbsp;&#x25D7;</a>
         </li>
       </ul>
     </div>
