@@ -1,6 +1,10 @@
 // oneko.js: https://github.com/adryd325/oneko.js
 
 (function oneko() {
+  // Mobile device detection
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|WPDesktop/i.test(window.navigator.userAgent);
+  if (isMobile) return;
+
   const isReducedMotion =
     window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
