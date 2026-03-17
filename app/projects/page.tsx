@@ -61,7 +61,7 @@ export default function Projects() {
 
       <div className="github-link-footer">
         <a
-          href="https://github.com/santoshxshrestha?tab=repositories"
+          href="https://github.com/vimlinuz?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
         >
