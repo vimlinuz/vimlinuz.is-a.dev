@@ -84,13 +84,11 @@ body {
 }
 
 .profile-photo {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin: 0 auto 2rem;
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #bb86fc, #03dac6);
   background-size: 200% 200%;
-  animation: gradientShift 3s ease-in-out infinite;
   padding: 3px;
   display: flex;
   align-items: center;
@@ -113,7 +111,7 @@ body {
 
 .name {
   font-family: var(--font-dancing-script), cursive;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
@@ -528,6 +526,35 @@ body {
 }
 
 @media (max-width: 600px) {
+  /* Remove hover effects for small screens/touch devices */
+  .profile-photo:hover::before,
+  .nav a:hover::before,
+  .nav a:hover,
+  .quick-links a:hover,
+  .quick-links a:hover::after,
+  .btn.close:hover,
+  .pointless.webring a:hover::before,
+  .pointless.webring a:hover,
+  #nix-wrapper:hover,
+  .project-card:hover::before,
+  .project-card:hover,
+  .project-title a:hover,
+  .project-link a:hover,
+  .github-link-footer a:hover,
+  .terminal-content::-webkit-scrollbar-thumb:hover {
+    background: none !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    text-shadow: none !important;
+    left: unset !important;
+    width: unset !important;
+    opacity: 1 !important;
+  }
+
   .pointless.webring {
     flex-wrap: wrap;
     gap: 0.3rem;

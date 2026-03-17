@@ -189,7 +189,7 @@ export default function Home() {
     <div className="container">
       <div className="header">
         <div className="profile-photo">
-          <Image src="/santosh.jpg" alt="vimlinuz" width={120} height={120} />
+          <Image src="/vimlinuz.png" alt="vimlinuz" width={120} height={120} />
         </div>
         <h1 className="name">VIMLINUZ</h1>
       </div>
