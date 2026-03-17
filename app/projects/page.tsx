@@ -4,7 +4,7 @@ import { fetchGitHubRepos } from "../lib/github";
 import ProjectCard from "../components/ProjectCard";
 
 async function ProjectsList() {
-  const repos = await fetchGitHubRepos("santoshxshrestha");
+  const repos = await fetchGitHubRepos("vimlinuz");
 
   if (repos.length === 0) {
     return (
