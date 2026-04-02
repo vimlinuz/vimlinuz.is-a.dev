@@ -6,6 +6,17 @@ interface PromptLineProps {
   handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   inputRef: RefObject<HTMLInputElement | null>;
 }
+export function ShellPrompt() {
+  return (
+    <>
+      <span className="user">[vimlinuz</span>
+      <span className="at">@</span>
+      <span className="host">nixos</span>
+      <span className="path">~]</span>
+      <span className="dollar">$</span>
+    </>
+  );
+}
 
 export default function PromptLine({
   currentInput,
@@ -16,11 +27,7 @@ export default function PromptLine({
   return (
     <>
       <div className="prompt-line">
-        <span className="user">[vimlinuz</span>
-        <span className="at">@</span>
-        <span className="host">nixos</span>
-        <span className="path">~]</span>
-        <span className="dollar">$</span>
+        <ShellPrompt />
         <span> </span>
         <span className="command">{currentInput}</span>
         <span className="cursor"></span>
