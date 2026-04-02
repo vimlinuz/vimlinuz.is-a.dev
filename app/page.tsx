@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef, KeyboardEvent } from "react";
+import PromptLine from "./components/PromptLine";
 import Image from "next/image";
 import Link from "next/link";
 import { getRandomContentPair } from "./lib/randomContent";
@@ -238,26 +239,12 @@ export default function Home() {
           ))}
 
           {isInteractive && (
-            <div className="prompt-line">
-              <span className="user">[vimlinuz</span>
-              <span className="at">@</span>
-              <span className="host">nixos</span>
-              <span className="path">~]</span>
-              <span className="dollar">$</span>
-              <span> </span>
-              <span className="command">{currentInput}</span>
-              <span className="cursor"></span>
-              <input
-                ref={inputRef}
-                type="text"
-                value={currentInput}
-                onChange={(e) => setCurrentInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                className="terminal-input-hidden"
-                autoFocus
-                spellCheck={false}
-              />
-            </div>
+            <PromptLine
+              currentInput={currentInput}
+              inputRef={inputRef}
+              handleKeyDown={handleKeyDown}
+              setCurrentInput={setCurrentInput}
+            />
           )}
         </div>
       </div>
