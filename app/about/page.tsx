@@ -2,7 +2,8 @@
 
 import { useEffect, useState, useRef, KeyboardEvent } from "react";
 import Link from "next/link";
-import PromptLine from "../components/PromptLine";
+import PromptLine, { ShellPrompt } from "../components/PromptLine";
+import { executeCommand } from "../lib/executeCommands";
 
 interface HistoryEntry {
   command: string;
@@ -96,102 +97,6 @@ export default function About() {
     return () => clearTimeout(initialDelay);
   }, [infoData.length]);
 
-  const executeCommand = (cmd: string): string => {
-    const command = cmd.trim().toLowerCase();
-
-    if (command === "") return "";
-
-    if (command === "help") {
-      return `Available commands:
-  help     - Show this help message
-  home     - Go back to home page
-  projects - View projects page
-  skills   - List my technical skills
-  contact  - Get my contact information
-  whoami   - Identify current user
-  date     - Show current date and time
-  echo     - Echo back your message (usage: echo <message>)
-  clear    - Clear terminal history
-  neofetch - Display system information
-  fortune  - Get a random fortune
-  ls       - List available pages`;
-    }
-
-    if (command === "home") {
-      return "Use the X button to navigate home, or visit /";
-    }
-
-    if (command === "projects") {
-      return "Use the navigation to visit the projects page.";
-    }
-
-    if (command === "skills") {
-      return `Technical Skills:
-  • Languages: JavaScript, Rust, C, C++, Bash, Lua, Python
-  • Frontend: HTML/CSS, Tailwind, Askama, Htmx
-  • Backend: Rust, Actix-web, PostgreSQL
-  • DevOps: CI/CD, Docker, AWS, Linux, Git, Nix
-  • Focus: Open Source, System Design, Web Development`;
-    }
-
-    if (command === "contact") {
-      return `Contact Information:
-  • GitHub: https://github.com/vimlinuz
-  • Discord: vimlinuz
-  • Email: username [at] gmail.com
-  • Location: Nepal`;
-    }
-
-    if (command === "whoami") {
-      return "vimlinuz";
-    }
-
-    if (command === "date") {
-      return new Date().toString();
-    }
-
-    if (command.startsWith("echo ")) {
-      return command.substring(5);
-    }
-
-    if (command === "clear") {
-      setHistory([]);
-      return "";
-    }
-
-    if (command === "ls") {
-      return `../  projects/  README.md`;
-    }
-
-    if (command === "neofetch") {
-      return `
-       ___      vimlinuz@nixos
-      /   \\     OS: NixOS (Yarara) x86_64
-     | o o |    Shell: nu
-     |  >  |    Terminal: Interactive Web Terminal
-      \\___/     Uptime: ${Math.floor(Math.random() * 100)} days
-                Editor: Neovim
-                Theme: Custom
-                Location: Butwal, Nepal`;
-    }
-
-    if (command === "fortune") {
-      const fortunes = [
-        "The best way to predict the future is to invent it.",
-        "Code is like humor. When you have to explain it, it's bad.",
-        "First, solve the problem. Then, write the code.",
-        "Experience is the name everyone gives to their mistakes.",
-        "Simplicity is the soul of efficiency.",
-        "Make it work, make it right, make it fast.",
-        "In the land of the blind, the one-eyed man is king.",
-        "Talk is cheap. Show me the code. - Linus Torvalds",
-      ];
-      return fortunes[Math.floor(Math.random() * fortunes.length)];
-    }
-
-    return `bash: command not found: ${cmd}\nType 'help' for available commands.`;
-  };
-
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       const command = currentInput.trim().toLowerCase();
@@ -204,7 +109,7 @@ export default function About() {
         return;
       }
 
-      const output = executeCommand(currentInput);
+      const output = executeCommand(currentInput, setHistory);
       setHistory([...history, { command: currentInput, output }]);
       setCurrentInput("");
 
@@ -241,11 +146,7 @@ export default function About() {
         {showInitialContent && (
           <>
             <div className="prompt-line">
-              <span className="user">[vimlinuz</span>
-              <span className="at">@</span>
-              <span className="host">nixos</span>
-              <span className="path">~]</span>
-              <span className="dollar">$</span>
+              <ShellPrompt />
               <span> </span>
               <span className="command" id="command-text">
                 {commandText}
@@ -307,11 +208,7 @@ export default function About() {
         {history.map((entry, index) => (
           <div key={index}>
             <div className="prompt-line">
-              <span className="user">[vimlinuz</span>
-              <span className="at">@</span>
-              <span className="host">nixos</span>
-              <span className="path">~]</span>
-              <span className="dollar">$</span>
+              <ShellPrompt />
               <span> {entry.command}</span>
             </div>
             {entry.output && (
