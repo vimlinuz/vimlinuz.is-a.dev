@@ -2,7 +2,10 @@
 
 (function oneko() {
   // Mobile device detection
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|WPDesktop/i.test(window.navigator.userAgent);
+  const isMobile =
+    /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|WPDesktop/i.test(
+      window.navigator.userAgent,
+    );
   if (isMobile) return;
 
   const isReducedMotion =
@@ -141,7 +144,7 @@
     });
 
     if (persistPosition) {
-      window.addEventListener("beforeunload", function (event) {
+      window.addEventListener("beforeunload", function () {
         window.localStorage.setItem(
           "oneko",
           JSON.stringify({

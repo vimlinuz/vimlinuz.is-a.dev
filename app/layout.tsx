@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { inter, jetbrainsMono, playfair, dancingScript } from "./fonts";
+import InteractiveBackground from "./components/InteractiveBackground";
 import Oneko from "./components/Oneko";
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} ${playfair.variable} ${dancingScript.variable} antialiased`}
       >
+        <InteractiveBackground />
         <Oneko />
         {children}
       </body>

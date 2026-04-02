@@ -2,10 +2,18 @@
 
 import { useEffect, useState, useRef, KeyboardEvent } from "react";
 import Link from "next/link";
+import PromptLine from "../components/PromptLine";
 
 interface HistoryEntry {
   command: string;
   output: string;
+}
+
+interface InfoData {
+  label: string;
+  value: string;
+  highlight?: boolean;
+  url?: string;
 }
 
 export default function About() {
@@ -20,21 +28,15 @@ export default function About() {
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
 
-  const infoData = [
-    { label: "Name:", value: "vimlinuz" },
-    { label: "Role:", value: "Wanderer" },
-    { label: "Location:", value: "Nepal" },
+  const infoData: InfoData[] = [
+    { label: "", value: "" },
     {
-      label: "Languages:",
-      value: "Js/Ts, Rust, C/C++, Bash",
-    },
-    { label: "Frontend:", value: "Htmx, Nextjs" },
-    { label: "Backend:", value: "Rust, Actix-web" },
-    { label: "Databases:", value: "PostgreSQL" },
-    { label: "DevOps:", value: "CI/CD, Docker, AWS, Linux, Git, Nix" },
-    {
-      label: "Interests:",
-      value: "Open Source, System Design, little bit of web",
+      label: "",
+      value:
+        "I'm a systems programmer driven by curiosity for how things work under the hood." +
+        "I enjoy building CLI tools, scripting, contributing in open-source porgrams and shaping efficient workflows through a fully customized Linux environment." +
+        "Currently pursuing BSc in CSIT, I spend much of my time learning through hands-on experimentation-configuring Linux with Hyprland, maintaining a minimal yet powerful setup with Neovim, nu, and tmux." +
+        "When I'm not programming, you'll find me obsessively ricing my setup, tweaking configurations, and tinkering with my system to squeeze out every millisecond of performance.",
     },
     { label: "", value: "" },
     {
@@ -46,12 +48,6 @@ export default function About() {
     { label: "Website:", value: "well", highlight: true },
     { label: "Email:", value: "username [at] gmail.com", highlight: true },
     { label: "Discord:", value: "vimlinuz", highlight: true },
-    { label: "", value: "" },
-    {
-      label: "",
-      value:
-        "I'm a systems programmer driven by curiosity for how things work under the hood. I enjoy building CLI tools in Rust, scripting in Bash, and shaping efficient workflows through a fully customized Linux environment. Currently pursuing BSc in CSIT, I spend much of my time learning through hands-on experimentation—configuring Linux with Hyprland, maintaining a minimal yet powerful setup with Neovim, nu, and tmux. When I'm not programming, you'll find me obsessively ricing my setup, tweaking configurations, and tinkering with my system to squeeze out every millisecond of performance.",
-    },
   ];
 
   useEffect(() => {
@@ -108,7 +104,6 @@ export default function About() {
     if (command === "help") {
       return `Available commands:
   help     - Show this help message
-  mefetch  - Display about information
   home     - Go back to home page
   projects - View projects page
   skills   - List my technical skills
@@ -120,16 +115,6 @@ export default function About() {
   neofetch - Display system information
   fortune  - Get a random fortune
   ls       - List available pages`;
-    }
-
-    if (command === "mefetch") {
-      return infoData
-        .map((info) => {
-          if (info.label === "" && info.value === "") return "";
-          if (info.label === "" && info.value !== "") return `  ${info.value}`;
-          return `${info.label} ${info.value}`;
-        })
-        .join("\n");
     }
 
     if (command === "home") {
@@ -338,26 +323,12 @@ export default function About() {
         ))}
 
         {isInteractive && (
-          <div className="prompt-line">
-            <span className="user">[vimlinuz</span>
-            <span className="at">@</span>
-            <span className="host">nixos</span>
-            <span className="path">~]</span>
-            <span className="dollar">$</span>
-            <span> </span>
-            <span className="command">{currentInput}</span>
-            <span className="cursor"></span>
-            <input
-              ref={inputRef}
-              type="text"
-              value={currentInput}
-              onChange={(e) => setCurrentInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className="terminal-input-hidden"
-              autoFocus
-              spellCheck={false}
-            />
-          </div>
+          <PromptLine
+            currentInput={currentInput}
+            inputRef={inputRef}
+            handleKeyDown={handleKeyDown}
+            setCurrentInput={setCurrentInput}
+          />
         )}
       </div>
     </div>

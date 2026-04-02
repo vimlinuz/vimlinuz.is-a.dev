@@ -301,7 +301,6 @@ body {
 }
 
 .output-hidden {
-  margin-top: 1.2rem;
   min-height: 3rem;
   transition: opacity 0.6s;
   opacity: 1;
