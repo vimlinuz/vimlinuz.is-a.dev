@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ backgroundColor: "#0f0f23" }}>
       <head>
         <link
           rel="stylesheet"
@@ -33,6 +33,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} ${playfair.variable} ${dancingScript.variable} antialiased`}
+        style={{ backgroundColor: "#0f0f23" }}
       >
         <InteractiveBackground />
         <Oneko />

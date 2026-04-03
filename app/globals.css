@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  min-height: 100%;
+  background-color: #0f0f23;
+  overscroll-behavior-y: none;
+}
+
 @keyframes gradientShift {
   0%,
   100% {
@@ -61,6 +68,7 @@ body {
   color: #e2e8f0;
   background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
