@@ -104,7 +104,8 @@ function createDot(width: number, height: number): Dot {
           };
 
   const temperatureRoll = Math.random();
-  const temperatureBias = starType === "hero" ? 0.52 : starType === "normal" ? 0.38 : 0.26;
+  const temperatureBias =
+    starType === "hero" ? 0.52 : starType === "normal" ? 0.38 : 0.26;
   const warmCutoff = temperatureBias * 0.5;
   const coolCutoff = 1 - temperatureBias * 0.5;
   const isWarm = temperatureRoll < warmCutoff;
@@ -132,11 +133,23 @@ function createDot(width: number, height: number): Dot {
     phase: Math.random() * Math.PI * 2,
     phaseSpeed: randomBetween(0.0025, 0.0065),
     baseAlpha: randomBetween(settings.baseAlpha[0], settings.baseAlpha[1]),
-    ambientAmplitude: randomBetween(settings.ambientAmplitude[0], settings.ambientAmplitude[1]),
-    baseTwinkle: randomBetween(settings.baseTwinkle[0], settings.baseTwinkle[1]),
-    twinkleIntensity: randomBetween(settings.twinkleIntensity[0], settings.twinkleIntensity[1]),
+    ambientAmplitude: randomBetween(
+      settings.ambientAmplitude[0],
+      settings.ambientAmplitude[1],
+    ),
+    baseTwinkle: randomBetween(
+      settings.baseTwinkle[0],
+      settings.baseTwinkle[1],
+    ),
+    twinkleIntensity: randomBetween(
+      settings.twinkleIntensity[0],
+      settings.twinkleIntensity[1],
+    ),
     pulse: 0,
-    pulseChance: randomBetween(settings.pulseChance[0], settings.pulseChance[1]),
+    pulseChance: randomBetween(
+      settings.pulseChance[0],
+      settings.pulseChance[1],
+    ),
     pulseDecay: randomBetween(settings.pulseDecay[0], settings.pulseDecay[1]),
     sparkleAngle: Math.random() * Math.PI,
     sparkleRotationBase: randomBetween(
@@ -147,11 +160,23 @@ function createDot(width: number, height: number): Dot {
       settings.sparkleRotationBoost[0],
       settings.sparkleRotationBoost[1],
     ),
-    sparkleThreshold: randomBetween(settings.sparkleThreshold[0], settings.sparkleThreshold[1]),
-    sparkleStretch: randomBetween(settings.sparkleStretch[0], settings.sparkleStretch[1]),
+    sparkleThreshold: randomBetween(
+      settings.sparkleThreshold[0],
+      settings.sparkleThreshold[1],
+    ),
+    sparkleStretch: randomBetween(
+      settings.sparkleStretch[0],
+      settings.sparkleStretch[1],
+    ),
     atmospherePhase: Math.random() * Math.PI * 2,
-    atmosphereSpeed: randomBetween(settings.atmosphereSpeed[0], settings.atmosphereSpeed[1]),
-    atmosphereAmount: randomBetween(settings.atmosphereAmount[0], settings.atmosphereAmount[1]),
+    atmosphereSpeed: randomBetween(
+      settings.atmosphereSpeed[0],
+      settings.atmosphereSpeed[1],
+    ),
+    atmosphereAmount: randomBetween(
+      settings.atmosphereAmount[0],
+      settings.atmosphereAmount[1],
+    ),
     coreColor,
     sparkleColor,
   };
@@ -259,7 +284,8 @@ export default function InteractiveBackground() {
         const distance = Math.hypot(dx, dy);
 
         if (distance > 0.001 && distance < AVOID_RADIUS) {
-          const force = ((AVOID_RADIUS - distance) / AVOID_RADIUS) * AVOID_FORCE;
+          const force =
+            ((AVOID_RADIUS - distance) / AVOID_RADIUS) * AVOID_FORCE;
           dot.vx += (dx / distance) * force;
           dot.vy += (dy / distance) * force;
         }
@@ -271,7 +297,8 @@ export default function InteractiveBackground() {
         dot.atmospherePhase += dot.atmosphereSpeed;
         const ambientWave = 0.5 + 0.5 * Math.sin(dot.phase);
         const atmosphericWave =
-          Math.sin(dot.atmospherePhase) * 0.65 + Math.sin(dot.atmospherePhase * 0.57 + 1.7) * 0.35;
+          Math.sin(dot.atmospherePhase) * 0.65 +
+          Math.sin(dot.atmospherePhase * 0.57 + 1.7) * 0.35;
         const atmosphericFactor = 1 + atmosphericWave * dot.atmosphereAmount;
 
         if (dot.pulse < 0.01 && Math.random() < dot.pulseChance) {
@@ -284,16 +311,26 @@ export default function InteractiveBackground() {
         }
 
         const burstTwinkle = dot.pulse * dot.twinkleIntensity;
-        dot.sparkleAngle += dot.sparkleRotationBase + burstTwinkle * dot.sparkleRotationBoost;
+        dot.sparkleAngle +=
+          dot.sparkleRotationBase + burstTwinkle * dot.sparkleRotationBoost;
 
         const baseAlpha = Math.max(
           0,
           dot.baseAlpha + (ambientWave - 0.5) * 2 * dot.ambientAmplitude * 0.65,
         );
-        const midTwinkle = dot.baseTwinkle + (ambientWave - 0.5) * 2 * dot.ambientAmplitude;
+        const midTwinkle =
+          dot.baseTwinkle + (ambientWave - 0.5) * 2 * dot.ambientAmplitude;
         const twinkle = Math.min(0.86, Math.max(0, midTwinkle + burstTwinkle));
-        const alpha = Math.min(1, Math.max(0, (baseAlpha + twinkle * 0.28) * atmosphericFactor));
-        const coreRadius = dot.radius * (1 + twinkle * 0.15 + burstTwinkle * 0.16 + (atmosphericFactor - 1) * 0.08);
+        const alpha = Math.min(
+          1,
+          Math.max(0, (baseAlpha + twinkle * 0.28) * atmosphericFactor),
+        );
+        const coreRadius =
+          dot.radius *
+          (1 +
+            twinkle * 0.15 +
+            burstTwinkle * 0.16 +
+            (atmosphericFactor - 1) * 0.08);
 
         dot.x += dot.vx;
         dot.y += dot.vy;
@@ -304,11 +341,15 @@ export default function InteractiveBackground() {
         if (dot.y > height + 4) dot.y = -4;
 
         if (dot.starType !== "faint" && burstTwinkle > dot.sparkleThreshold) {
-          const sparkleStrength = (burstTwinkle - dot.sparkleThreshold) / (1 - dot.sparkleThreshold);
+          const sparkleStrength =
+            (burstTwinkle - dot.sparkleThreshold) / (1 - dot.sparkleThreshold);
           const baseSize = dot.starType === "hero" ? 2.4 : 1.9;
           const maxAlpha = dot.starType === "hero" ? 0.92 : 0.78;
           const sparkleSize = dot.radius * (baseSize + sparkleStrength * 1.9);
-          const sparkleAlpha = Math.min(maxAlpha, 0.38 + sparkleStrength * 0.62);
+          const sparkleAlpha = Math.min(
+            maxAlpha,
+            0.38 + sparkleStrength * 0.62,
+          );
           drawSparkle(
             dot.x,
             dot.y,
