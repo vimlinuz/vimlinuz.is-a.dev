@@ -100,6 +100,15 @@ export default function Home() {
 
   return (
     <div className="container">
+      <div className="terminal-buttons">
+        <div
+          className="btn close"
+          onClick={() => self.close()}
+          style={{ textDecoration: "none" }}
+        >
+          <i className="fa-solid fa-xmark"></i>
+        </div>
+      </div>
       <div className="header">
         <div className="profile-photo">
           <Image src="/vimlinuz.png" alt="vimlinuz" width={120} height={120} />
