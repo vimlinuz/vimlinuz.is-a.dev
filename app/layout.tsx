@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords:
     "vimlinuz, personal website, projects, blog, NixOS, developer, portfolio",
   openGraph: {
-    images: "/santosh.jpg",
+    images: "/vimlinuz.png",
   },
 };
 
