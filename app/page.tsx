@@ -165,6 +165,7 @@ export default function Home() {
       <nav className="nav">
         <Link href="/projects">Projects</Link>
         <Link href="/about">About me</Link>
+        <Link href="/post">Post</Link>
       </nav>
 
       <NixWebring />
