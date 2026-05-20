@@ -49,6 +49,12 @@ export default function About() {
     { label: "Website:", value: "well", highlight: true },
     { label: "Email:", value: "username [at] gmail.com", highlight: true },
     { label: "Discord:", value: "vimlinuz", highlight: true },
+    {
+      label: "Matrix:",
+      value: "@vimlinuz:matrix.org",
+      highlight: true,
+      url: "https://matrix.to/#/@vimlinuz:matrix.org",
+    },
   ];
 
   useEffect(() => {
