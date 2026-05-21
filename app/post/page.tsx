@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function postList() {
-  const file_name = await getPostList();
+  const postDetails = await getPostList();
   return (
     <div className="container post-page">
       <div className="terminal-buttons">
@@ -20,9 +20,18 @@ export default async function postList() {
       <div className="header"></div>
       <div className="file-content">
         <div className="flex post-list">
-          {file_name.map((name) => (
-            <Link key={name} href={`/post/${name}`} className="blog_main">
-              <div> {name}</div>
+          {postDetails.map((post) => (
+            <Link
+              key={post.title}
+              href={`/post/${post.fileName}`}
+              className="blog_main"
+            >
+              <div>
+                <p>Title:</p> {post.title}
+                <p>Date:</p>
+                {post.date} <p>Tags:</p>
+                {post.tags}
+              </div>
             </Link>
           ))}
         </div>
