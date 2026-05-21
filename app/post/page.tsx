@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Welcome from "@/markdown/welcome.md";
 import { getPostList } from "../lib/postList";
 
 export const metadata: Metadata = {
@@ -20,20 +19,13 @@ export default async function postList() {
       <h1 className="name">posts</h1>
       <div className="header"></div>
       <div className="file-content">
-        <ul>
+        <div>
           {file_name.map((name) => (
-            <li
-              key={name}
-              style={{
-                marginBottom: "10px",
-                color: "blue",
-                cursor: "pointer",
-              }}
-            >
-              {name}
-            </li>
+            <Link key={name} href={`/post/${name}`}>
+              <div> {name}</div>
+            </Link>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
