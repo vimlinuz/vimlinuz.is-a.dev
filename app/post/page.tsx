@@ -11,13 +11,15 @@ export const metadata: Metadata = {
 export default async function postList() {
   const file_name = await getPostList();
   return (
-    <div className="container">
+    <div className="container post-page">
       <div className="terminal-buttons">
         <Link href="/" className="btn close" style={{ textDecoration: "none" }}>
           <i className="fa-solid fa-xmark"></i>
         </Link>
       </div>
-      <div className="filecontent">
+      <h1 className="name">posts</h1>
+      <div className="header"></div>
+      <div className="file-content">
         <ul>
           {file_name.map((name) => (
             <li

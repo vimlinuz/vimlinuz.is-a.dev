@@ -940,6 +940,7 @@ body {
 }
 
 /* About Page Specific Styles */
+.post-page,
 .about-page {
   justify-content: flex-start;
   padding-top: 0;
@@ -947,6 +948,7 @@ body {
   animation: fadeInUp 1s ease-out;
 }
 
+.post-page .name,
 .about-page .name {
   display: flex;
   justify-content: center;
@@ -956,10 +958,12 @@ body {
   margin-bottom: 1rem;
 }
 
+.post-page .header,
 .about-page .header {
   margin-bottom: 1rem;
 }
 
+.post-page .file-content,
 .about-page .terminal-content {
   min-height: calc(100vh - 200px);
   max-height: calc(100vh - 150px);
@@ -968,18 +972,22 @@ body {
 }
 
 @media (max-width: 600px) {
+  .post-page,
   .about-page {
     padding: 0 6px;
   }
 
-  .about-page .name {
+  .about-page .name,
+  .post-page .name {
     font-size: 2rem;
   }
 
+  .post-page .header,
   .about-page .header {
     margin-bottom: 0.5rem;
   }
 
+  .post-page .file-content,
   .about-page .terminal-content {
     padding: 0.9rem 0.3rem;
     font-size: 0.8rem;
@@ -998,26 +1006,27 @@ body {
   pointer-events: none;
 }
 
+.file-content,
 .terminal-content {
   max-height: 500px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
-
+.file-content::-webkit-scrollbar,
 .terminal-content::-webkit-scrollbar {
   width: 8px;
 }
-
+.file-content::-webkit-scrollbar-track,
 .terminal-content::-webkit-scrollbar-track {
   background: transparent;
 }
-
+.file-content::-webkit-scrollbar-thumb,
 .terminal-content::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
-
+.file-content::-webkit-scrollbar-thumb:hover,
 .terminal-content::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
