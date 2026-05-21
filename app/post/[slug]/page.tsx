@@ -25,7 +25,7 @@ export default async function Page({ params }: Props) {
       <div className="header"></div>
       <div className="file-content">
         <div>
-          <article>
+          <article className="blog-content">
             <Post />
           </article>
         </div>

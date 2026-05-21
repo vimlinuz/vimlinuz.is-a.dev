@@ -19,9 +19,9 @@ export default async function postList() {
       <h1 className="name">posts</h1>
       <div className="header"></div>
       <div className="file-content">
-        <div>
+        <div className="flex post-list">
           {file_name.map((name) => (
-            <Link key={name} href={`/post/${name}`}>
+            <Link key={name} href={`/post/${name}`} className="blog_main">
               <div> {name}</div>
             </Link>
           ))}
