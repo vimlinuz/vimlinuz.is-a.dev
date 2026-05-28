@@ -26,18 +26,16 @@ export default async function postList() {
               href={`/post/${post.fileName}`}
               className="blog_main"
             >
-              <div className="rounded-lg border border-[#26233a] bg-[#191724] p-4 shadow-lg">
-                <p className="text-[#908caa] text-lg font-semibold">
-                  <span className="text-[#c4a7e7]">{post.title}</span>
+              <div className="post-card">
+                <p className="post-card-title">{post.title}</p>
+
+                <p className="post-card-meta">
+                  <span className="post-card-date">{post.date}</span>
                 </p>
 
-                <p className="mt-2 text-sm text-[#908caa]">
-                  <span className="text-[#c4a7e7]">{post.date}</span>
-                </p>
-
-                <p className="mt-2 text-sm text-[#908caa]">
+                <p className="post-card-meta">
                   Tags:
-                  <span className="ml-1 text-[#9ccfd8]">{post.tags}</span>
+                  <span className="post-card-tags">{post.tags}</span>
                 </p>
               </div>
             </Link>
