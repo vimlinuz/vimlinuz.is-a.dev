@@ -28,15 +28,18 @@ export default async function postList() {
             >
               <div className="post-card">
                 <p className="post-card-title">{post.title}</p>
-
-                <p className="post-card-meta">
-                  <span className="post-card-date">{post.date}</span>
-                </p>
-
-                <p className="post-card-meta">
-                  Tags:
-                  <span className="post-card-tags">{post.tags}</span>
-                </p>
+                {post.tags && post.tags.length > 0 && (
+                  <div className="post-topic flex gap-1.5">
+                    {post.tags.slice(0, 5).map((topic) => (
+                      <span key={topic} className="topic-tag m-16 text-white">
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <div className="post-card-footer">
+                  <span className="post-date">Updated {post.date}</span>
+                </div>
               </div>
             </Link>
           ))}

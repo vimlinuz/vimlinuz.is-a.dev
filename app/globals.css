@@ -766,6 +766,7 @@ body {
   flex: 1;
 }
 
+.project-topic,
 .project-topics {
   display: flex;
   flex-wrap: wrap;
@@ -782,6 +783,7 @@ body {
   border: 1px solid rgba(187, 134, 252, 0.3);
 }
 
+.post-card-footer,
 .project-footer {
   display: flex;
   justify-content: space-between;
@@ -790,6 +792,10 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.85rem;
   color: #94a3b8;
+}
+
+.post-card-footer {
+  margin-top: 1rem;
 }
 
 .language {
@@ -804,7 +810,7 @@ body {
   border-radius: 50%;
 }
 
-.updated {
+.post-date {
   font-size: 0.85rem;
 }
 
@@ -1101,17 +1107,13 @@ body {
   font-family: var(--font-inter), sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
-  margin: 0;
+  margin-bottom: 0.75rem;
   color: #ffffff;
 }
 
 .post-card-meta {
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: #ffffff;
-}
-
-.post-card-date {
   color: #ffffff;
 }
 
