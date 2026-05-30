@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { getPost } from "@/app/lib/postList";
 import { serialize } from "next-mdx-remote/serialize";
+import rehypeHighlight from "rehype-highlight";
 import MDXContent from "@/app/components/MDXContent";
 import styles from "./page.module.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 type Props = {
   params: Promise<{
@@ -22,7 +24,11 @@ export default async function Page({ params }: Props) {
       </div>
     );
   }
-  const content = await serialize(post.content || "");
+  const content = await serialize(post.content || "", {
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight],
+    },
+  });
 
   return (
     <div className={`container post-page ${styles.postShell}`}>

@@ -162,19 +162,22 @@
 
 .postBody :global(pre) {
   margin: 1.6rem 0;
-  padding: 1.3rem 1.4rem;
+  padding: 0;
   background: rgba(10, 12, 28, 0.8);
   border-radius: 14px;
   border: 1px solid rgba(148, 163, 184, 0.2);
-  overflow-x: auto;
+  overflow: hidden;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.postBody :global(code) {
+.postBody :global(pre) :global(code) {
+  display: block;
+  padding: 1.3rem 1.4rem;
+  overflow-x: auto;
   font-family: var(--font-jetbrains-mono), "Fira Mono", "Consolas", monospace;
   font-size: 0.95em;
-  color: #f8fafc;
+  background: transparent !important;
 }
 
 .postBody :global(p code),
@@ -183,6 +186,9 @@
   padding: 0.15rem 0.4rem;
   border-radius: 8px;
   border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #f8fafc;
+  font-family: var(--font-jetbrains-mono), "Fira Mono", "Consolas", monospace;
+  font-size: 0.95em;
 }
 
 .postBody :global(hr) {
