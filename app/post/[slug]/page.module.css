@@ -1,0 +1,222 @@
+.postShell {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.postShell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      800px 400px at 20% 0%,
+      rgba(78, 205, 196, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 400px at 80% 0%,
+      rgba(187, 134, 252, 0.08),
+      transparent 60%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.postPanel {
+  position: relative;
+  z-index: 1;
+  background: rgba(8, 10, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.postHeader {
+  position: relative;
+  text-align: center;
+  padding: 2.8rem 2rem 1.6rem;
+}
+
+.postTitle {
+  font-size: 2.8rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.contentFrame {
+  position: relative;
+  padding: 2rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.postBody {
+  font-family: var(--font-inter), sans-serif;
+  color: #cbd5e1;
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+.postBody :global(h1),
+.postBody :global(h2),
+.postBody :global(h3),
+.postBody :global(h4) {
+  color: #f8fafc;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 2.2rem 0 1rem;
+}
+
+.postBody :global(h1) {
+  font-size: 2rem;
+}
+
+.postBody :global(h2) {
+  font-size: 1.6rem;
+}
+
+.postBody :global(h3) {
+  font-size: 1.35rem;
+}
+
+.postBody :global(p) {
+  margin: 0 0 1.3rem;
+}
+
+.postBody :global(a) {
+  color: #4ecdc4;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(78, 205, 196, 0.4);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.postBody :global(a:hover) {
+  color: #bb86fc;
+  border-color: rgba(187, 134, 252, 0.6);
+}
+
+.postBody :global(ul),
+.postBody :global(ol) {
+  padding-left: 1.4rem;
+  margin: 0 0 1.4rem;
+}
+
+.postBody :global(li) {
+  margin: 0.4rem 0;
+}
+
+.postBody :global(blockquote) {
+  margin: 1.8rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid rgba(187, 134, 252, 0.7);
+  background: rgba(19, 20, 38, 0.6);
+  border-radius: 12px;
+  color: #e2e8f0;
+}
+
+.postBody :global(pre) {
+  margin: 1.6rem 0;
+  padding: 1.3rem 1.4rem;
+  background: rgba(10, 12, 28, 0.8);
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.postBody :global(code) {
+  font-family: var(--font-jetbrains-mono), "Fira Mono", "Consolas", monospace;
+  font-size: 0.95em;
+  color: #f8fafc;
+}
+
+.postBody :global(p code),
+.postBody :global(li code) {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 0.15rem 0.4rem;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.postBody :global(hr) {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 184, 0.4),
+    transparent
+  );
+  margin: 2rem 0;
+}
+
+.postBody :global(img) {
+  max-width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 1.8rem 0;
+}
+
+.postBody :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.8rem 0;
+  font-size: 0.95rem;
+}
+
+.postBody :global(th),
+.postBody :global(td) {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+
+.postBody :global(th) {
+  background: rgba(15, 23, 42, 0.6);
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.postBody :global(td) {
+  background: rgba(8, 10, 26, 0.6);
+}
+
+@media (max-width: 700px) {
+  .postHeader {
+    padding: 2.4rem 1.2rem 1.2rem;
+  }
+
+  .postTitle {
+    font-size: 2.1rem;
+  }
+
+  .contentFrame {
+    padding: 1.2rem;
+  }
+
+  .postBody {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .postHeader {
+    padding: 2.4rem 0.8rem 1rem;
+  }
+
+  .postTitle {
+    font-size: 1.85rem;
+  }
+}

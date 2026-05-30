@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getPost } from "@/app/lib/postList";
 import { serialize } from "next-mdx-remote/serialize";
 import MDXContent from "@/app/components/MDXContent";
+import styles from "./page.module.css";
 
 type Props = {
   params: Promise<{
@@ -24,7 +25,7 @@ export default async function Page({ params }: Props) {
   const content = await serialize(post.content || "");
 
   return (
-    <div className="container post-page">
+    <div className={`container post-page ${styles.postShell}`}>
       <div className="terminal-buttons">
         <Link
           href="/post"
@@ -34,15 +35,18 @@ export default async function Page({ params }: Props) {
           <i className="fa-solid fa-xmark"></i>
         </Link>
       </div>
-      <h1 className="name">{post.title}</h1>
-      <div className="header"></div>
-      <div className="file-content">
-        <div>
-          <article className="blog-content">
-            <div className="wrapper">
-              <MDXContent source={content} />
-            </div>
-          </article>
+      <div className={styles.postPanel}>
+        <div className={styles.postHeader}>
+          <h1 className={`name ${styles.postTitle}`}>{post.title}</h1>
+        </div>
+        <div className={`file-content ${styles.contentFrame}`}>
+          <div>
+            <article className={styles.article}>
+              <div className={styles.postBody}>
+                <MDXContent source={content} />
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
