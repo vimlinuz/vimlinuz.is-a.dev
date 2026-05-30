@@ -69,26 +69,49 @@
 .postBody :global(h2),
 .postBody :global(h3),
 .postBody :global(h4) {
-  color: #f8fafc;
   font-weight: 600;
   letter-spacing: 0.01em;
   margin: 2.2rem 0 1rem;
+  text-shadow: 0 8px 22px rgba(15, 23, 42, 0.45);
 }
 
 .postBody :global(h1) {
   font-size: 2rem;
+  color: #bb86fc;
 }
 
 .postBody :global(h2) {
   font-size: 1.6rem;
+  color: #4ecdc4;
 }
 
 .postBody :global(h3) {
   font-size: 1.35rem;
+  color: #03dac6;
+}
+
+.postBody :global(h4) {
+  color: #94a3b8;
+}
+
+.postBody :global(h1 a),
+.postBody :global(h2 a),
+.postBody :global(h3 a),
+.postBody :global(h4 a) {
+  color: inherit;
+  border-bottom: none;
 }
 
 .postBody :global(p) {
   margin: 0 0 1.3rem;
+}
+
+.postBody :global(strong) {
+  color: #f8fafc;
+}
+
+.postBody :global(em) {
+  color: #94a3b8;
 }
 
 .postBody :global(a) {
@@ -109,6 +132,19 @@
 .postBody :global(ol) {
   padding-left: 1.4rem;
   margin: 0 0 1.4rem;
+}
+
+.postBody :global(ul) {
+  list-style: square;
+  color: #e2e8f0;
+}
+
+.postBody :global(ol) {
+  color: #e2e8f0;
+}
+
+.postBody :global(li::marker) {
+  color: #bb86fc;
 }
 
 .postBody :global(li) {
@@ -191,6 +227,10 @@
 
 .postBody :global(td) {
   background: rgba(8, 10, 26, 0.6);
+}
+
+.postBody :global(tr:nth-child(even) td) {
+  background: rgba(12, 16, 34, 0.65);
 }
 
 @media (max-width: 700px) {
