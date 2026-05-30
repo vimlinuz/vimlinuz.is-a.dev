@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { getPost } from "@/app/lib/postList";
+import { serialize } from "next-mdx-remote/serialize";
+import MDXContent from "@/app/components/MDXContent";
+
 type Props = {
   params: Promise<{
     slug: string;
@@ -8,8 +12,16 @@ type Props = {
 export default async function Page({ params }: Props) {
   const { slug } = await params;
   const safeSlug = slug.endsWith(".md") ? slug : `${slug}.md`;
-  const Post = (await import(`@/markdown/${safeSlug}`)).default;
-  const postName = safeSlug.split(".").slice(0, -1).join(".");
+  const post = await getPost(safeSlug);
+
+  if (post === undefined) {
+    return (
+      <div className="no-projects">
+        <p>No such post found.</p>
+      </div>
+    );
+  }
+  const content = await serialize(post.content || "");
 
   return (
     <div className="container post-page">
@@ -22,12 +34,14 @@ export default async function Page({ params }: Props) {
           <i className="fa-solid fa-xmark"></i>
         </Link>
       </div>
-      <h1 className="name">{postName}</h1>
+      <h1 className="name">{post.title}</h1>
       <div className="header"></div>
       <div className="file-content">
         <div>
           <article className="blog-content">
-            <Post />
+            <div className="wrapper">
+              <MDXContent source={content} />
+            </div>
           </article>
         </div>
       </div>

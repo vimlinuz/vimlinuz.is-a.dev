@@ -1,3 +1,4 @@
+import "server-only";
 import fs from "fs/promises";
 import matter from "gray-matter";
 
@@ -35,4 +36,22 @@ export async function getPostList(): Promise<postDetails[]> {
     console.error("Error reading the markdown directorPath: ", err);
   }
   return [];
+}
+
+export async function getPost(file: string): Promise<postDetails | undefined> {
+  try {
+    const filePath = `./markdown/${file}`;
+    const str = await fs.readFile(filePath, "utf8");
+    const allContent = matter(str);
+    const dateValue = allContent.data.date;
+    return {
+      fileName: file,
+      title: allContent.data.title ?? file,
+      date: dateValue ? new Date(dateValue).toISOString().slice(0, 10) : "",
+      content: allContent.content,
+      tags: Array.isArray(allContent.data.tags) ? allContent.data.tags : [],
+    };
+  } catch (err) {
+    console.error("Error reading markdown file: ", err);
+  }
 }
