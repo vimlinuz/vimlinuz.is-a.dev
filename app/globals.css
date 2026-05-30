@@ -773,6 +773,7 @@ body {
   gap: 0.5rem;
 }
 
+.post-tag-chip,
 .topic-tag {
   background: rgba(187, 134, 252, 0.15);
   color: #bb86fc;
@@ -1188,63 +1189,5 @@ body {
 
   .file-content .blog_main:hover > div {
     transform: none;
-  }
-}
-
-/* Markdown Content Styles (scoped to article) */
-.blog-content {
-  font-size: 1.11rem;
-  color: #e2e8f0;
-  line-height: 1.7;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-.blog-content img,
-.blog-content video,
-.blog-content iframe {
-  max-width: 100%;
-  border-radius: 10px;
-  margin: 15px 0;
-  display: block;
-  height: auto;
-}
-
-.blog-content pre,
-.blog-content code {
-  font-family: "Fira Mono", "Consolas", "Liberation Mono", monospace;
-  background: #191932;
-  color: #ffe9aa;
-  border-radius: 7px;
-  padding: 0.6em 0.9em;
-  font-size: 0.98em;
-  overflow-x: auto;
-  margin: 1em 0;
-}
-
-.blog-content h1,
-.blog-content h2,
-.blog-content h3,
-.blog-content h4 {
-  color: #bb86fc;
-  margin-top: 1.6em;
-  margin-bottom: 0.5em;
-  font-weight: 400;
-}
-
-.blog-content ul,
-.blog-content ol {
-  margin-left: 1.4em;
-}
-
-@media (max-width: 600px) {
-  .blog-content {
-    font-size: 0.96rem;
-  }
-
-  .blog-content pre,
-  .blog-content code {
-    font-size: 0.95em;
-    padding: 0.35em 0.7em;
   }
 }
