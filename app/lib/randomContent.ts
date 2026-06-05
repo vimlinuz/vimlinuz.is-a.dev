@@ -1,6 +1,18 @@
 export const contentPairs = [
   {
-    title: "cybardev — [NIX] — 22:38",
+    title: "Nguyễn Văn Thắng - 01:02",
+    bio: "ok bye Pheri bhetaula! Is that your language?",
+  },
+  {
+    title: "Wroclaw - [NIX] - 01:29",
+    bio: "Time is constant, for you, the viewer, 1 second per second, but you see others experiencing time at a different pace, and others see you experiencing time at a different pace",
+  },
+  {
+    title: "juli0n_ - [NIX] - 01:28",
+    bio: "Did you people know that time is not a constant, but based on the viewer",
+  },
+  {
+    title: "cybardev - [NIX] - 22:38",
     bio: "A jack of all trades and master of none, is often better than a master of one.",
   },
   {
