@@ -5,7 +5,7 @@ import Oneko from "./components/Oneko";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://santoshxshrestha.tech"),
+  metadataBase: new URL("https://vimlinuz.is-a.dev"),
   title: "vimlinuz - Home",
   description: "vimlinuz's personal website. Explore more about Santosh.",
   keywords:
