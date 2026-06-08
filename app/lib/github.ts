@@ -1,3 +1,5 @@
+import reposToInclude from "@/data/reposToInclude.json" with { type: "json" };
+
 export interface GitHubRepo {
   id: number;
   name: string;
@@ -19,35 +21,6 @@ export interface GitHubRepo {
 export async function fetchGitHubRepos(
   username: string,
 ): Promise<GitHubRepo[]> {
-  const reposToinclude = [
-    "nmtui",
-    "alertify",
-    "xeditor",
-    "initflake",
-    "santoshxshrestha.github.io",
-    "nixos",
-    "wall-archive",
-    "rustylens",
-    "crane-rs",
-    "rusre",
-    "gh-unfollowers",
-    "rmxt",
-    "NightDiamond-cursors",
-    "mdwatch",
-    "HistMerge",
-    "tmux-sm",
-    "mdecho",
-    "audix",
-    "homerc",
-    "voxlan",
-    "voxlan",
-    "flox",
-    "nexish",
-    "facebook-clone",
-    "unix_perms",
-    "portfolio",
-  ];
-
   try {
     const response = await fetch(
       `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
@@ -69,7 +42,7 @@ export async function fetchGitHubRepos(
     return repos
       .filter(
         (repo) =>
-          !repo.fork && !repo.archived && reposToinclude.includes(repo.name),
+          !repo.fork && !repo.archived && reposToInclude.includes(repo.name),
       )
       .sort((a, b) => {
         // Prioritize repos with more stars
