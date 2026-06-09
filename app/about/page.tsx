@@ -34,7 +34,7 @@ export default function About() {
     {
       label: "",
       value:
-        "I'm a systems programmer driven by curiosity for how things work under the hood." +
+        "I want to be a systems programmer driven by curiosity for how things work under the hood." +
         "I enjoy building CLI tools, scripting, contributing in open-source porgrams and shaping efficient workflows through a fully customized Linux environment." +
         "Currently pursuing BSc in CSIT, I spend much of my time learning through hands-on experimentation-configuring Linux with Hyprland, maintaining a minimal yet powerful setup with Neovim, nu, and tmux." +
         "When I'm not programming, you'll find me obsessively ricing my setup, tweaking configurations, and tinkering with my system to squeeze out every millisecond of performance.",
