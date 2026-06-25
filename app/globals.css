@@ -929,6 +929,10 @@ body {
     gap: 1.5rem;
   }
 
+  .container {
+    border-radius: 0px;
+  }
+
   .project-card-header {
     flex-direction: column;
     gap: 0.5rem;
@@ -970,6 +974,10 @@ body {
 @media (max-width: 600px) {
   .about-page {
     padding: 0 6px;
+  }
+
+  .container {
+    border-radius: 0px;
   }
 
   .about-page .name {
